@@ -6,27 +6,27 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './text-input.component.html',
-  styleUrl: './text-input.component.css'
+  styleUrl: './text-input.component.css',
 })
 export class TextInputComponent {
   @Input({
     required: true,
   })
-  form!: FormGroup
+  form!: FormGroup;
 
   @Input({
     required: true,
   })
-  id!: string
+  id!: string;
 
   @Input({
     required: true,
   })
-  name!: string
+  name!: string;
 
   @Input()
-  type: 'text' | 'date' | 'password' = 'text'
+  type: 'text' | 'date' | 'password' = 'text';
 
   @Input()
-  alt = ''
+  alt = '';
 }

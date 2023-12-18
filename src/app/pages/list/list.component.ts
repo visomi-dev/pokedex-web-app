@@ -8,24 +8,18 @@ import { TextInputComponent } from '../../components/ui/form-fields/text-input/t
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [
-    RouterLink,
-    IconComponent,
-    TextInputComponent,
-
-    ReactiveFormsModule,
-  ],
+  imports: [RouterLink, IconComponent, TextInputComponent, ReactiveFormsModule],
   templateUrl: './list.component.html',
-  styleUrl: './list.component.css'
+  styleUrl: './list.component.css',
 })
 export class ListComponent {
   form = new FormGroup({
-    search: new FormControl('')
-  })
+    search: new FormControl(''),
+  });
 
   constructor() {
     this.form.controls.search.valueChanges.subscribe((value) => {
-      console.log(value)
-    })
+      console.log(value);
+    });
   }
 }

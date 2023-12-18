@@ -7,18 +7,18 @@ export const routes: Routes = [
   {
     path: '',
     redirectTo: 'list',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'list',
-    component: ListComponent
+    component: ListComponent,
   },
   {
     path: 'detail',
-    component: DetailComponent
+    component: DetailComponent,
   },
   {
     path: '**',
-    redirectTo: 'list'
+    redirectTo: 'list',
   },
 ];
