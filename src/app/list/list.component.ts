@@ -11,5 +11,4 @@ import { IconComponent } from '../components/ui/icon/icon.component';
   styleUrl: './list.component.css'
 })
 export class ListComponent {
-
 }
