@@ -1,10 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { NgClass } from '@angular/common';
+
+import { IconComponent, IconName } from '../../icon/icon.component';
 
 @Component({
   selector: 'app-text-input',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [NgClass, ReactiveFormsModule, IconComponent],
   templateUrl: './text-input.component.html',
   styleUrl: './text-input.component.css',
 })
@@ -29,4 +32,17 @@ export class TextInputComponent {
 
   @Input()
   alt = '';
+
+  @Input()
+  placeholder = '';
+
+  @Input({
+    required: false,
+  })
+  leftIcon?: IconName;
+
+  @Input({
+    required: false,
+  })
+  rightIcon?: IconName;
 }

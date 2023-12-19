@@ -18,6 +18,8 @@ const icons = {
   ],
 } as const;
 
+export type IconName = keyof typeof icons;
+
 @Component({
   selector: 'app-icon',
   standalone: true,
@@ -29,7 +31,7 @@ export class IconComponent {
   @Input({
     required: true,
   })
-  icon!: keyof typeof icons;
+  icon!: IconName;
 
   icons = icons;
 
