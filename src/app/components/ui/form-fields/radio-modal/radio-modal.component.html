@@ -8,9 +8,45 @@
 
 @if (open()) {
   <div
-    class="fixed left-0 top-0 h-screen w-screen bg-black bg-opacity-50"
+    class="fixed left-0 top-0 flex h-screen w-screen items-center justify-center bg-black bg-opacity-50"
     tabindex="0"
     (click)="onClick()"
     (keypress)="onClick()"
-  ></div>
+  >
+    <div
+      class="rounded-xl bg-red-pokedex p-1"
+      tabindex="0"
+      (click)="onClickCard($event)"
+      (keypress)="onClick()"
+    >
+      <fieldset>
+        <legend class="px-5 py-4 text-white">Sort by:</legend>
+
+        <div class="flex flex-col gap-4 rounded-lg bg-white px-5 py-4">
+          <div class="flex items-center gap-2">
+            <input
+              class="text-red-pokedex focus:ring-red-pokedex"
+              type="radio"
+              id="number"
+              name="drone"
+              value="number"
+              checked
+            />
+            <label for="number">Number</label>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <input
+              class="text-red-pokedex focus:ring-red-pokedex"
+              type="radio"
+              id="name"
+              name="drone"
+              value="name"
+            />
+            <label for="name">Name</label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
 }
