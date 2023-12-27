@@ -40,14 +40,4 @@ export class ListComponent {
       label: 'Name',
     },
   ];
-
-  constructor() {
-    this.form.controls.search.valueChanges.subscribe((value) => {
-      console.log(value);
-    });
-
-    this.form.controls.sortBy.valueChanges.subscribe((value) => {
-      console.log(value);
-    });
-  }
 }

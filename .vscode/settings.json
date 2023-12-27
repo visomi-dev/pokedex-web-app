@@ -27,5 +27,5 @@
     "/\\*\\s*tw\\s*\\*/\\s*'([^']*)'",
     "/\\*\\s*tw\\s*\\*/\\s*\"([^\"]*)\""
   ],
-  "cSpell.words": ["pokeball", "pokedex"]
+  "cSpell.words": ["pokeball", "pokedex", "pokemons"]
 }
