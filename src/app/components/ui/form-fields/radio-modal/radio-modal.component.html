@@ -19,32 +19,26 @@
       (click)="onClickCard($event)"
       (keypress)="onClick()"
     >
-      <fieldset>
+      <fieldset [formGroup]="form">
         <legend class="px-5 py-4 text-white">Sort by:</legend>
 
         <div class="flex flex-col gap-4 rounded-lg bg-white px-5 py-4">
-          <div class="flex items-center gap-2">
-            <input
-              class="text-red-pokedex focus:ring-red-pokedex"
-              type="radio"
-              id="number"
-              name="drone"
-              value="number"
-              checked
-            />
-            <label for="number">Number</label>
-          </div>
+          @for (option of options; track option.id) {
+            <div class="flex items-center gap-2">
+              <input
+                [formControlName]="name"
+                class="text-red-pokedex focus:ring-red-pokedex"
+                type="radio"
+                [id]="option.id"
+                [name]="name"
+                [value]="option.value"
+              />
 
-          <div class="flex items-center gap-2">
-            <input
-              class="text-red-pokedex focus:ring-red-pokedex"
-              type="radio"
-              id="name"
-              name="drone"
-              value="name"
-            />
-            <label for="name">Name</label>
-          </div>
+              <label [for]="option.id">
+                {{ option.label }}
+              </label>
+            </div>
+          }
         </div>
       </fieldset>
     </div>
