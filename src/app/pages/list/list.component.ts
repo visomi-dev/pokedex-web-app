@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
@@ -8,6 +8,7 @@ import {
   RadioModalComponent,
   RadioOption,
 } from '../../components/ui/form-fields/radio-modal/radio-modal.component';
+import { PokemonsService } from '../../shared/pokemons/pokemons.service';
 
 @Component({
   selector: 'app-list',
@@ -23,6 +24,10 @@ import {
   styleUrl: './list.component.css',
 })
 export class ListComponent {
+  private readonly pokemonsService = inject(PokemonsService);
+
+  readonly pokemons = this.pokemonsService.pokemons;
+
   form = new FormGroup({
     search: new FormControl(''),
     sortBy: new FormControl('number'),

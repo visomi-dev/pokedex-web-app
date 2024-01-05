@@ -7,10 +7,5 @@ import { routes } from './app.routes';
 import { PokemonsService } from './shared/pokemons/pokemons.service';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideRouter(routes),
-    provideHttpClient(),
-
-    PokemonsService,
-  ],
+  providers: [provideRouter(routes), provideHttpClient(), PokemonsService],
 };

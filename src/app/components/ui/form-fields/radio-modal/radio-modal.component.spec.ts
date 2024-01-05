@@ -8,10 +8,9 @@ describe('RadioModalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RadioModalComponent]
-    })
-    .compileComponents();
-    
+      imports: [RadioModalComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(RadioModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
