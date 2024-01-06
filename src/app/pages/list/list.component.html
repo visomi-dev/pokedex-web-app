@@ -1,4 +1,4 @@
-<div class="h-full w-full bg-red-pokedex p-2">
+<div class="flex h-full w-full flex-col bg-red-pokedex p-2">
   <div class="flex flex-col gap-2 px-3 pb-6 pt-3">
     <div class="flex items-center gap-4">
       <app-icon class="h-7 text-white" icon="pokeball" />
@@ -20,17 +20,11 @@
     </div>
   </div>
 
-  <div class="grid grid-cols-3 gap-2">
+  <div class="grid flex-1 grid-cols-3 gap-2 rounded-lg bg-white p-3">
     @for (pokemon of pokemons(); track pokemon.name) {
-      <div class="flex flex-col">
-        <img
-          class="w-full"
-          [src]="pokemon.data.sprites.other.home.front_default"
-          [alt]="pokemon.name"
-        />
-
-        <div>{{ pokemon.name }} - {{ pokemon.data.id }}</div>
-      </div>
+      <router-link [routerLink]="['/detail', pokemon.data.id]">
+        <app-pokemon-card [pokemon]="pokemon" />
+      </router-link>
     }
   </div>
 </div>
